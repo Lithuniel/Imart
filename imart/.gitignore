@@ -1,5 +1,5 @@
 /node_modules/
-
+src/app/environments/environment.ts
 
 # Compiled output
 /dist

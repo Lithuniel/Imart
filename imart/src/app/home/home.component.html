@@ -1,2 +1,21 @@
-<h1>Imart</h1>
-
+<div class="container">
+    <h1>Imart</h1>
+  
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="terminoBusqueda" placeholder="Introduce un término de búsqueda">
+    </div>
+    <button class="btn btn-primary" (click)="buscarImagenes()">Buscar</button>
+  
+    <div class="row">
+      <div class="col-md-4" *ngFor="let imagen of resultados">
+        <div class="card">
+          <img [src]="imagen.urls.small" class="card-img-top" alt="{{ imagen.alt_description }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ imagen.description }}</h5>
+            <p class="card-text">Autor: {{ imagen.user.username }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
