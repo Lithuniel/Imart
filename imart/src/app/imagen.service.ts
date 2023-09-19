@@ -41,4 +41,9 @@ export class ImagenService {
     const url = `https://api.unsplash.com/search/photos?query=cities&per_page=10&client_id=${environment.apiKey}`;
     return this.http.get(url);
   }
+
+  getRandomImages(count: number): Observable<any> {
+    const url = `https://api.unsplash.com/photos/random?count=${count}&client_id=${environment.apiKey}`;
+    return this.http.get(url);
+  }
 }

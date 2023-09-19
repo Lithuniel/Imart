@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { ImagenService } from '../imagen.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   terminoBusqueda: string = '';
   resultados: any[] = [];
   isLoading = false;
@@ -16,14 +16,15 @@ export class HomeComponent {
   totalPages = 1;
   visiblePages: number[] = [];
   maxVisiblePages = 6;
-  filters: any = {}; 
+  filters: any = {};
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
   constructor(private imagenService: ImagenService, private router: Router) {}
 
   ngOnInit() {
-    this.loadImages();
+    // Carga 10 imágenes aleatorias al inicio
+    this.loadRandomImages(10);
   }
 
   buscarImagenes() {
@@ -34,7 +35,6 @@ export class HomeComponent {
   verDetalle(id: string) {
     this.router.navigate(['imagen', id]);
   }
-  
 
   nextPage() {
     if (!this.isLoading && this.currentPage < this.totalPages) {
@@ -93,8 +93,24 @@ export class HomeComponent {
         }
       );
   }
-}
 
+  loadRandomImages(count: number) {
+    this.isLoading = true;
+
+    this.imagenService
+      .getRandomImages(count)
+      .subscribe(
+        (data: any) => {
+          this.resultados = data;
+          this.isLoading = false;
+        },
+        (error: any) => {
+          console.error('Error al cargar imágenes aleatorias:', error);
+          this.isLoading = false;
+        }
+      );
+  }
+}
 
 
 
