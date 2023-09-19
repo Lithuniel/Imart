@@ -1,1 +1,12 @@
-<p>detail-img works!</p>
+<app-detail-img></app-detail-img>
+<div class="container">
+    <h1>Detalles de la Imagen</h1>
+  
+    <div *ngIf="imagenDetalles">
+      <h2>{{ imagenDetalles.description }}</h2>
+      <p>Autor: {{ imagenDetalles.user.username }}</p>
+      <p>Fecha de creación: {{ imagenDetalles.created_at }}</p>
+      <img [src]="imagenDetalles.urls.full" alt="{{ imagenDetalles.alt_description }}">
+    </div>
+  </div>
+  
