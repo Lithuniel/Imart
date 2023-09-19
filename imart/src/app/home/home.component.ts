@@ -11,11 +11,12 @@ export class HomeComponent {
   terminoBusqueda: string = '';
   resultados: any[] = [];
   isLoading = false;
-  currentPage = 1; 
-  itemsPerPage = 10; 
-  totalPages = 1; 
-  visiblePages: number[] = []; 
-  maxVisiblePages = 6; 
+  currentPage = 1;
+  itemsPerPage = 10;
+  totalPages = 1;
+  visiblePages: number[] = [];
+  maxVisiblePages = 6;
+  filters: any = {}; 
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
@@ -26,24 +27,25 @@ export class HomeComponent {
   }
 
   buscarImagenes() {
-    this.currentPage = 1; 
+    this.currentPage = 1;
     this.loadImages();
   }
 
   verDetalle(id: string) {
     this.router.navigate(['imagen', id]);
   }
+  
 
   nextPage() {
     if (!this.isLoading && this.currentPage < this.totalPages) {
-      this.currentPage++; 
+      this.currentPage++;
       this.loadImages();
     }
   }
 
   prevPage() {
     if (!this.isLoading && this.currentPage > 1) {
-      this.currentPage--; 
+      this.currentPage--;
       this.loadImages();
     }
   }
@@ -75,9 +77,9 @@ export class HomeComponent {
 
   loadImages() {
     this.isLoading = true;
-    
+
     this.imagenService
-      .buscarImagenes(this.terminoBusqueda, this.currentPage, this.itemsPerPage)
+      .buscarImagenes(this.terminoBusqueda, this.currentPage, this.itemsPerPage, this.filters)
       .subscribe(
         (data: any) => {
           this.resultados = data.results;
@@ -92,6 +94,7 @@ export class HomeComponent {
       );
   }
 }
+
 
 
 

@@ -5,8 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { DetailImgComponent } from './detail-img/detail-img.component'; 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, 
   { path: 'imagen/:id', component: DetailImgComponent }, 
+  { path: '', component: HomeComponent }, 
 ];
 
 

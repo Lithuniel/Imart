@@ -2,31 +2,79 @@
   <h1>Imart</h1>
 
   <div class="form-group">
-    <input type="text" class="form-control" [(ngModel)]="terminoBusqueda" placeholder="Introduce un término de búsqueda">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="terminoBusqueda"
+      placeholder="Introduce un término de búsqueda"
+    />
   </div>
+
+  <div class="form-group">
+    <label for="order_by">Ordenar por:</label>
+    <select id="order_by" [(ngModel)]="filters.order_by">
+      <option value="latest">Más reciente</option>
+      <option value="relevant">Más relevante</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="color">Color:</label>
+    <select id="color" [(ngModel)]="filters.color">
+      <option value="">N/A</option>
+      <option value="black_and_white">Blanco y negro</option>
+      <option value="black">Negro</option>
+      <option value="white">Blanco</option>
+      <option value="green">Verde</option>
+      <option value="magenta">Magenta</option>
+      <option value="blue">Azul</option>
+      <option value="yellow">Amarillo</option>
+      <option value="orange">Naranja</option>
+      <option value="purple">Purpura</option>
+    </select>
+  </div>
+
+  <!-- Botón para aplicar filtros -->
   <button class="btn btn-primary" (click)="buscarImagenes()">Buscar</button>
 
+  <!-- Resto del contenido de imágenes y paginación -->
   <div class="row">
     <div class="col-md-4" *ngFor="let imagen of resultados">
       <div class="card" (click)="verDetalle(imagen.id)">
         <a [routerLink]="['/imagen', imagen.id]">
-          <img [src]="imagen.urls.small" class="card-img-top" alt="{{ imagen.alt_description }}">
+          <img
+            [src]="imagen.urls.small"
+            class="card-img-top"
+            alt="{{ imagen.alt_description }}"
+          />
         </a>
-        <div class="card-body">
-          <h5 class="card-title">{{ imagen.description }}</h5>
-          <p class="card-text">Autor: {{ imagen.user.username }}</p>
-        </div>
       </div>
     </div>
   </div>
 
-
   <div class="pagination">
-    <button class="btn btn-secondary" (click)="prevPage()" [disabled]="currentPage === 1">Página anterior</button>
+    <button
+      class="btn btn-secondary"
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+    >
+      Página anterior
+    </button>
     <ng-container *ngFor="let pageNumber of visiblePages">
-      <button class="btn btn-secondary" (click)="goToPage(pageNumber)" [disabled]="pageNumber === currentPage">{{ pageNumber }}</button>
+      <button
+        class="btn btn-secondary"
+        (click)="goToPage(pageNumber)"
+        [disabled]="pageNumber === currentPage"
+      >
+        {{ pageNumber }}
+      </button>
     </ng-container>
-    <button class="btn btn-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages">Página siguiente</button>
+    <button
+      class="btn btn-secondary"
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+    >
+      Página siguiente
+    </button>
   </div>
 </div>
-

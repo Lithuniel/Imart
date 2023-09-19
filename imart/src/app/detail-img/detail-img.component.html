@@ -1,12 +1,13 @@
-<app-detail-img></app-detail-img>
 <div class="container">
-    <h1>Detalles de la Imagen</h1>
-  
-    <div *ngIf="imagenDetalles">
-      <h2>{{ imagenDetalles.description }}</h2>
-      <p>Autor: {{ imagenDetalles.user.username }}</p>
-      <p>Fecha de creación: {{ imagenDetalles.created_at }}</p>
-      <img [src]="imagenDetalles.urls.full" alt="{{ imagenDetalles.alt_description }}">
-    </div>
+  <h1>Detalles de la Imagen</h1>
+
+  <div *ngIf="imagenDetalles" class="card-body">
+    <p class="card-text">Autor: {{ imagenDetalles.user.username }}</p>
+    <p class="card-date">Fecha de creación: {{ imagenDetalles.created_at }}</p>
+    <h2 class="card-title">{{ imagenDetalles.description }}</h2>
+    <img
+      [src]="imagenDetalles.urls.full"
+      alt="{{ imagenDetalles.alt_description }}"
+    />
   </div>
-  
+</div>
