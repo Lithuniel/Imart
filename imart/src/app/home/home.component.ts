@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, OnInit, HostListener} from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, HostListener } from '@angular/core';
 import { ImagenService } from '../imagen.service';
 import { Router } from '@angular/router';
 import { SearchService } from '../search.service';
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   visiblePages: number[] = [];
   maxVisiblePages = 6;
   filters: any = {};
+  noResults = false; // Variable para controlar si no hay resultados
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
@@ -25,7 +26,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.terminoBusqueda = this.searchService.getSearchTerm();
-    
     
     if (!this.terminoBusqueda || !this.searchService.getSearchTerm()) {
       this.loadRandomImages(10);
@@ -98,6 +98,10 @@ export class HomeComponent implements OnInit {
           this.resultados = data.results;
           this.totalPages = Math.ceil(data.total / this.itemsPerPage);
           this.generateVisiblePages();
+
+          // Verificar si no hay resultados
+          this.noResults = this.resultados.length === 0;
+
           this.isLoading = false;
         },
         (error: any) => {

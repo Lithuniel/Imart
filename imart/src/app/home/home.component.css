@@ -27,7 +27,6 @@
   height: auto;
 }
 
-
 .form-search {
   width: 100%;
 }
@@ -44,7 +43,6 @@
   border: 1px solid #3b8281;
   outline: none;
 }
-
 
 .form-filter {
   display: flex;
@@ -117,6 +115,10 @@
   object-fit: cover;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.no-results-message{
+  color:black;
 }
 
 .pagination {
