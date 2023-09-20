@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild, OnInit, HostListener } from '@angular/core';
-import { ImagenService } from '../imagen.service';
+import { ImagenService } from '../../services/imagen.service';
 import { Router } from '@angular/router';
-import { SearchService } from '../search.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-home',

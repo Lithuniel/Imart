@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ImagenService } from '../imagen.service';
+import { ImagenService } from '../../services/imagen.service';
 
 @Component({
   selector: 'app-detail-img',
