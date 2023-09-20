@@ -22,6 +22,12 @@
   margin-top: 2rem;
 }
 
+.logo {
+  width: 300px;
+  height: auto;
+}
+
+
 .form-search {
   width: 100%;
 }

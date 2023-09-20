@@ -3,6 +3,8 @@
   }
   
   .small-logo {
+    width: 300px;
+    height: auto;
     max-width: 100px;
     max-height: 100px;
   }
