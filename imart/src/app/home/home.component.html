@@ -12,6 +12,7 @@
     <div class="form-filter">
       <div class="form-group">
         <select id="order_by" [(ngModel)]="filters.order_by" placeholder="Ordenar por">
+          <option value="" disabled selected>Selecciona una opción</option>
           <option value="latest">Más reciente</option>
           <option value="relevant">Más relevante</option>
         </select>
@@ -19,6 +20,7 @@
 
       <div class="form-group">
         <select id="color" [(ngModel)]="filters.color" placeholder="Color">
+          <option value="" disabled selected>Selecciona un color</option>
           <option value="">N/A</option>
           <option value="black_and_white">Blanco y negro</option>
           <option value="black">Negro</option>
