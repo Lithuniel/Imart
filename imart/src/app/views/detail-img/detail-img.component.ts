@@ -9,7 +9,7 @@ import { ImagenService } from '../../services/imagen.service';
 })
 export class DetailImgComponent implements OnInit {
   imagenId: string | null = null;
-  imagenDetalles: any;
+  imagenDetalles: any = {}; 
 
   constructor(
     private route: ActivatedRoute,
@@ -22,14 +22,14 @@ export class DetailImgComponent implements OnInit {
       const id = params.get('id');
       if (id !== null) {
         this.imagenId = id;
-        this.obtenerDetallesDeImagen();
+        this.obtenerDetallesDeImagenConCamposAdicionales();
       }
     });
   }
 
-  obtenerDetallesDeImagen() {
+  obtenerDetallesDeImagenConCamposAdicionales() {
     if (this.imagenId !== null) {
-      this.imagenService.getImagenDetails(this.imagenId).subscribe((data: any) => {
+      this.imagenService.getImagenDetailsWithAdditionalFields(this.imagenId).subscribe((data: any) => {
         this.imagenDetalles = data;
       });
     }

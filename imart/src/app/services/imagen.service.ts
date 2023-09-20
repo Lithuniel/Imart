@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ImagenService {
 
   constructor(private http: HttpClient) { }
-  
+
   buscarImagenes(terminoBusqueda: string, page: number, perPage: number, filters: any) {
     let url = `https://api.unsplash.com/search/photos?query=${terminoBusqueda}&page=${page}&per_page=${perPage}&client_id=${environment.apiKey}`;
   
@@ -36,7 +36,13 @@ export class ImagenService {
     return this.http.get(url);
   }
 
-  // Nuevo método para obtener la lista de ciudades
+  // Nuevo método para obtener detalles de una imagen con campos adicionales
+  getImagenDetailsWithAdditionalFields(id: string): Observable<any> {
+    const url = `https://api.unsplash.com/photos/${id}?client_id=${environment.apiKey}&w=id,description,show_on_profile,tags,location[latitude],location[longitude],location[name],location[city],location[country],exif[make],exif[model],exif[exposure_time],exif[aperture_value],exif[focal_length],exif[iso_speed_ratings]`;
+    return this.http.get(url);
+  }
+
+  // Otros métodos existentes
   getCities(): Observable<any> {
     const url = `https://api.unsplash.com/search/photos?query=cities&per_page=10&client_id=${environment.apiKey}`;
     return this.http.get(url);

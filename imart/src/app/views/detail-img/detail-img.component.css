@@ -1,32 +1,62 @@
-h1 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
+.container-detail {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-  }
-  
+.h1-paginaDetalle {
+  font-size: 24px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #3b8281;
+}
 
-  p {
-    color: #777;
-    font-size: 16px;
-  }
+.container-card-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
 
-  .card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .card-text {
-    color: #777;
-  }
+.container-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
 
-  .card-date{
-    color: #777;
-  }
+.detalles-logo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-detalle{
+  width: 200px;
+  height:auto;
+}
+
+.boton-atras-detalle {
+  background-color: #3b8281;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.boton-atras-detalle:hover {
+  color: #f4ba51;
+  background-color: white;
+  border-color: #f4ba51;
+}
+
+.card-text {
+  color: #777;
+  margin: 5px 0;
+}
+
+
