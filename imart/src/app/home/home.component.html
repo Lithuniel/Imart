@@ -7,6 +7,7 @@
         class="form-control"
         [(ngModel)]="terminoBusqueda"
         placeholder="Introduce una búsqueda"
+        (keydown.enter)="buscarImagenes()"
       />
     </div>
     <div class="form-filter">

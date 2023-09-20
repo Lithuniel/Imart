@@ -37,7 +37,11 @@ export class HomeComponent implements OnInit {
   buscarImagenes() {
     this.currentPage = 1;
     this.searchService.setSearchTerm(this.terminoBusqueda); 
-    this.loadImages();
+    if (this.terminoBusqueda.trim() === '') {
+      this.loadRandomImages(10);
+    } else {
+      this.loadImages(); 
+    }
   }
   
 
