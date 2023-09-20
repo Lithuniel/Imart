@@ -104,6 +104,8 @@ export class HomeComponent implements OnInit {
 
           this.resultCount = data.total;
 
+          this.noResults = this.resultados.length === 0;
+
           const endTime = Date.now();
           this.elapsedTime = (endTime - startTime) / 1000; 
 

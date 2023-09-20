@@ -121,7 +121,7 @@
   display: flex;
 }
 
-.no-results-message,
+.no-results,
 .elapsed-time{
   color:#3b8281;
   font-style: italic;
