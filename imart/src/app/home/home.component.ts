@@ -1,6 +1,7 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, HostListener} from '@angular/core';
 import { ImagenService } from '../imagen.service';
 import { Router } from '@angular/router';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-home',
@@ -20,17 +21,25 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-  constructor(private imagenService: ImagenService, private router: Router) {}
+  constructor(private imagenService: ImagenService, private router: Router, private searchService: SearchService) {}
 
   ngOnInit() {
-   
-    this.loadRandomImages(10);
+    this.terminoBusqueda = this.searchService.getSearchTerm();
+    
+    
+    if (!this.terminoBusqueda || !this.searchService.getSearchTerm()) {
+      this.loadRandomImages(10);
+    } else {
+      this.loadImages(); 
+    }
   }
-
+  
   buscarImagenes() {
     this.currentPage = 1;
+    this.searchService.setSearchTerm(this.terminoBusqueda); 
     this.loadImages();
   }
+  
 
   verDetalle(id: string) {
     this.router.navigate(['imagen', id]);

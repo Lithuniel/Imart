@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ImagenService } from '../imagen.service';
 
 @Component({
@@ -13,32 +13,33 @@ export class DetailImgComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private imagenService: ImagenService
-  ) { }
+  ) {}
 
   ngOnInit() {
-
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id !== null) {
         this.imagenId = id;
-  
         this.obtenerDetallesDeImagen();
       }
     });
   }
 
   obtenerDetallesDeImagen() {
-  
     if (this.imagenId !== null) {
-      this.imagenService.getImagenDetails(this.imagenId)
-        .subscribe((data: any) => {
-          
-          this.imagenDetalles = data;
-        });
+      this.imagenService.getImagenDetails(this.imagenId).subscribe((data: any) => {
+        this.imagenDetalles = data;
+      });
     }
   }
+
+  volverAtras() {
+    window.history.back();
+  }
 }
+
 
 
 

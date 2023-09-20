@@ -1,13 +1,14 @@
 <div class="container">
-  <h1>Detalles de la Imagen</h1>
-
+  
   <div *ngIf="imagenDetalles" class="card-body">
+    <img
+    [src]="imagenDetalles.urls.full"
+    alt="{{ imagenDetalles.alt_description }}"
+    />
+    <h1>Detalles de la Imagen</h1>
     <p class="card-text">Autor: {{ imagenDetalles.user.username }}</p>
     <p class="card-date">Fecha de creación: {{ imagenDetalles.created_at }}</p>
     <h2 class="card-title">{{ imagenDetalles.description }}</h2>
-    <img
-      [src]="imagenDetalles.urls.full"
-      alt="{{ imagenDetalles.alt_description }}"
-    />
+    <button (click)="volverAtras()">Volver a la búsqueda</button>
   </div>
 </div>
