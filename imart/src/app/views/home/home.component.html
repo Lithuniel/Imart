@@ -59,9 +59,14 @@
       </a>
     </div>
 
-    <div class="no-results-message" *ngIf="noResults">
-      No hay resultados que mostrar.
-    </div>
+      <div class="elapsed-time" *ngIf="elapsedTime > 0">
+        {{ resultCount }} resultados encontrados en: {{ elapsedTime }} segundos
+      </div>
+
+      <div class="no-results-message" *ngIf="noResults">
+        No hay resultados que mostrar.
+      </div>
+    
   </div>
 
   <div class="pagination" *ngIf="totalPages > 1">

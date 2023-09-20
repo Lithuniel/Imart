@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
   visiblePages: number[] = [];
   maxVisiblePages = 6;
   filters: any = {};
-  noResults = false; // Variable para controlar si no hay resultados
+  noResults = false; 
+  resultCount: number = 0; 
+  elapsedTime: number = 0; 
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
@@ -90,6 +92,7 @@ export class HomeComponent implements OnInit {
 
   loadImages() {
     this.isLoading = true;
+    const startTime = Date.now();
 
     this.imagenService
       .buscarImagenes(this.terminoBusqueda, this.currentPage, this.itemsPerPage, this.filters)
@@ -99,8 +102,10 @@ export class HomeComponent implements OnInit {
           this.totalPages = Math.ceil(data.total / this.itemsPerPage);
           this.generateVisiblePages();
 
-          // Verificar si no hay resultados
-          this.noResults = this.resultados.length === 0;
+          this.resultCount = data.total;
+
+          const endTime = Date.now();
+          this.elapsedTime = (endTime - startTime) / 1000; 
 
           this.isLoading = false;
         },
@@ -128,6 +133,4 @@ export class HomeComponent implements OnInit {
       );
   }
 }
-
-
 

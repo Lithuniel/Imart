@@ -117,8 +117,14 @@
   border-top-right-radius: 5px;
 }
 
-.no-results-message{
-  color:black;
+.results{
+  display: flex;
+}
+
+.no-results-message,
+.elapsed-time{
+  color:#3b8281;
+  font-style: italic;
 }
 
 .pagination {
