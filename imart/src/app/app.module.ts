@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { DetailImgComponent } from './detail-img/detail-img.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FilterComponent } from './filter/filter.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DetailImgComponent,
-    FilterComponent
+    FilterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

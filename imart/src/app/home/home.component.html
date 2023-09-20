@@ -51,9 +51,10 @@
         />
       </a>
     </div>
+    
   </div>
 
-  <div class="pagination">
+  <div class="pagination" *ngIf="totalPages > 1">
     <button
       class="btn btn-secondary"
       (click)="prevPage()"
@@ -78,4 +79,5 @@
       Página siguiente
     </button>
   </div>
+  
 </div>

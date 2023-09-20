@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   constructor(private imagenService: ImagenService, private router: Router) {}
 
   ngOnInit() {
-    // Carga 10 imágenes aleatorias al inicio
+   
     this.loadRandomImages(10);
   }
 

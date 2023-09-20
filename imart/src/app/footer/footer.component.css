@@ -1,0 +1,60 @@
+.footer {
+    background-color: #6BB3AB;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .small-logo {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .footer-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+  }
+  
+  .social-icons img {
+    max-width: 34px;
+    max-height: 34px;
+  }
+
+  .legal-link  {
+    color: white;
+    text-decoration: none;
+  }
+
+  .copyright {
+    font-size: 14px;
+    text-align: center;
+    color: white;
+  }
+  
+  .legal-links {
+    text-align: center;
+    font-size: 14px;
+    padding:10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .legal-link:hover {
+    text-decoration: underline;
+  }
+  
+  
