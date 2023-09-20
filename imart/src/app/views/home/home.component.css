@@ -22,6 +22,12 @@
   margin-top: 2rem;
 }
 
+.card:hover img {
+  transform: scale(1.01);
+  filter: brightness(0.9); 
+  transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
 .logo {
   width: 300px;
   height: auto;
@@ -62,7 +68,6 @@
   background-color: white; 
   cursor: pointer;
 }
-
 
 .form-filter select:focus {
   border: 1px solid #3b8281; 
@@ -112,8 +117,6 @@
 .card-text {
   color: #777;
 }
-
-
 
 .results{
   display: flex;
