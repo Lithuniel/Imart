@@ -20,13 +20,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    border-bottom: 2px  solid white;
+   padding-top: 1rem;
+    border-bottom: 2px solid white;
   }
   
   .social-icons a {
     margin: 0 10px;
-    border: none;
   }
   
   .social-icons img {
@@ -48,7 +47,7 @@
   .legal-links {
     text-align: center;
     font-size: 14px;
-    padding:10px;
+    padding-bottom: 1rem;
     color: white;
     text-decoration: none;
   }

@@ -46,7 +46,7 @@
   <div class="elapsed-time" *ngIf="elapsedTime > 0 && !noResults">
     {{ resultCount }} resultados encontrados en: {{ elapsedTime }} segundos
   </div>
-  <div class="container-img" >
+  <div class="container-img">
     <div
       class="card"
       *ngFor="let imagen of resultados"
@@ -60,7 +60,6 @@
         />
       </a>
     </div>
-
   </div>
 
   <div *ngIf="noResults" class="no-results">
