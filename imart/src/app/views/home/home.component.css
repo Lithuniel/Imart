@@ -105,10 +105,6 @@
   border-radius: 0.5rem;
 }
 
-.card:last-child {
-  margin-left: -10px; 
-}
-
 .card-title {
   font-size: 18px;
   margin-bottom: 10px;
@@ -147,4 +143,11 @@
 
 .pagination button:hover {
   background-color: grey;
+}
+
+@media screen and (max-width: 768px){
+  .card-img-top {
+    width: 100%;
+    height: 450px;
+  }
 }
