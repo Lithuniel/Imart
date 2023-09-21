@@ -43,8 +43,10 @@
       <button class="btn btn-primary" (click)="buscarImagenes()">Buscar</button>
     </div>
   </div>
-
-  <div class="container-img">
+  <div class="elapsed-time" *ngIf="elapsedTime > 0 && !noResults">
+    {{ resultCount }} resultados encontrados en: {{ elapsedTime }} segundos
+  </div>
+  <div class="container-img" >
     <div
       class="card"
       *ngFor="let imagen of resultados"
@@ -59,40 +61,12 @@
       </a>
     </div>
 
-    
-  </div>
-  
-  <div class="elapsed-time" *ngIf="elapsedTime > 0 && !noResults">
-    {{ resultCount }} resultados encontrados en: {{ elapsedTime }} segundos
   </div>
 
-  <div *ngIf="noResults" class="no-results" >
+  <div *ngIf="noResults" class="no-results">
     No hay resultados para mostrar.
   </div>
-
-  <div class="pagination" *ngIf="totalPages > 1">
-    <button
-      class="btn btn-secondary"
-      (click)="prevPage()"
-      [disabled]="currentPage === 1"
-    >
-      Página anterior
-    </button>
-    <ng-container *ngFor="let pageNumber of visiblePages">
-      <button
-        class="btn btn-secondary"
-        (click)="goToPage(pageNumber)"
-        [disabled]="pageNumber === currentPage"
-      >
-        {{ pageNumber }}
-      </button>
-    </ng-container>
-    <button
-      class="btn btn-secondary"
-      (click)="nextPage()"
-      [disabled]="currentPage === totalPages"
-    >
-      Página siguiente
-    </button>
-  </div>
+</div>
+<div *ngIf="showFooter">
+  <app-footer></app-footer>
 </div>
