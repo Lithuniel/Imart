@@ -17,7 +17,10 @@ export class HomeComponent implements OnInit {
   totalPages = 1;
   visiblePages: number[] = [];
   maxVisiblePages = 6;
-  filters: any = {};
+  filters: any = {
+    order_by: '',
+    color:'' 
+  };
   noResults = false;
   resultCount: number = 0;
   elapsedTime: number = 0;
