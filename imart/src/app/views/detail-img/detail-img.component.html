@@ -1,0 +1,65 @@
+<div class="container-detail">
+  
+  <header class="logo-cabecera">
+    <a href="/">
+      <img
+        src="assets/images/Imart.svg"
+        alt="Logo de Imart"
+        class="logo-cabecera-img"
+      />
+    </a>
+  </header>
+
+  <main>
+    <div *ngIf="imagenDetalles" class="card-body">
+      <img
+        [src]="imagenDetalles.urls.full"
+        alt="{{ imagenDetalles.alt_description }}"
+      />
+    </div>
+    <div class="detalles-logo">
+      <h1 class="h1-paginaDetalle">Detalles de la Imagen</h1>
+      <a href="/">
+        <img
+          src="assets/images/Imart.svg"
+          alt="Logo de Imart"
+          class="logo-detalle"
+        />
+      </a>
+    </div>
+    <div class="container-card-text">
+      <p class="card-text">Autor: {{ imagenDetalles.user.username }}</p>
+      <p class="card-text">
+        Fecha de creación: {{ imagenDetalles.created_at }}
+      </p>
+      <p class="card-text">{{ imagenDetalles.description }}</p>
+      <p class="card-text">
+        Descripción detallada: {{ imagenDetalles.description }}
+      </p>
+      <p class="card-text">Ubicación: {{ imagenDetalles.location.name }}</p>
+      <p class="card-text">Ciudad: {{ imagenDetalles.location.city }}</p>
+      <p class="card-text">País: {{ imagenDetalles.location.country }}</p>
+      <p class="card-text">
+        Marca de la cámara: {{ imagenDetalles.exif.make }}
+      </p>
+      <p class="card-text">
+        Modelo de la cámara: {{ imagenDetalles.exif.model }}
+      </p>
+      <p class="card-text">
+        Tiempo de exposición: {{ imagenDetalles.exif.exposure_time }}
+      </p>
+      <p class="card-text">
+        Valor de apertura: {{ imagenDetalles.exif.aperture_value }}
+      </p>
+      <p class="card-text">
+        Longitud focal: {{ imagenDetalles.exif.focal_length }}
+      </p>
+    </div>
+
+    <button class="boton-atras-detalle" (click)="volverAtras()">
+      Volver a la búsqueda
+    </button>
+  </main>
+</div>
+
+<app-footer></app-footer>

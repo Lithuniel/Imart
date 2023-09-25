@@ -1,0 +1,136 @@
+.container {
+  max-width: 938px;
+  padding: 30px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control {
+  text-indent: 10px;
+}
+
+.container-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.card:hover img {
+  transform: scale(1.01);
+  filter: brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+}
+
+.form-search {
+  width: 100%;
+}
+
+.form-control {
+  height: 2rem;
+  width: 100%;
+  border-radius: 1rem;
+  border: none;
+  color: #777;
+}
+
+.form-control:focus {
+  border: 1px solid #3b8281;
+  outline: none;
+}
+
+.form-filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0.5rem;
+}
+
+.form-filter select {
+  width: 100%;
+  padding: 0.2rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  color: #777;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-filter select:focus {
+  border: 1px solid #3b8281;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: #3b8281;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  color: #f4ba51;
+  border-color: #f4ba51;
+  transform: scale(1.1);
+}
+
+.card {
+  width: calc(50% - 10px);
+  border-radius: 0.5rem;
+  margin-bottom: 16px;
+}
+
+.card-img-top {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: #777;
+}
+
+.results {
+  display: flex;
+}
+
+.no-results,
+.elapsed-time {
+  color: #3b8281;
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  .card-img-top {
+    width: 100%;
+    height: 450px;
+  }
+}

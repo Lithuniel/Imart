@@ -1,0 +1,9 @@
+<div>
+    <label for="author">Autor:</label>
+    <input type="text" id="author" [(ngModel)]="authorFilter">
+  </div>
+  <div>
+    <label for="date">Fecha:</label>
+    <input type="text" id="date" [(ngModel)]="dateFilter">
+  </div>
+  <button (click)="applyFilters()">Aplicar Filtros</button>

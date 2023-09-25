@@ -1,0 +1,76 @@
+<div class="container">
+  <header class="search">
+    <a href="/">
+      <img src="assets/images/Imart.svg" alt="Logo de Imart" class="logo" />
+    </a>
+    <div class="form-search">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="terminoBusqueda"
+        placeholder="Busca"
+        (keydown.enter)="buscarImagenes()"
+      />
+    </div>
+    <div class="form-filter">
+      <div class="form-group">
+        <select id="order_by" [(ngModel)]="filters.order_by">
+          <option value="" disabled selected>Ordenar por</option>
+          <option value="latest">Más reciente</option>
+          <option value="relevant">Más relevante</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select id="color" [(ngModel)]="filters.color">
+          <option value="" disabled selected>Selecciona un color</option>
+          <option value="">N/A</option>
+          <option value="black_and_white">Blanco y negro</option>
+          <option value="black">Negro</option>
+          <option value="white">Blanco</option>
+          <option value="green">Verde</option>
+          <option value="magenta">Magenta</option>
+          <option value="blue">Azul</option>
+          <option value="yellow">Amarillo</option>
+          <option value="orange">Naranja</option>
+          <option value="purple">Purpura</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" (click)="buscarImagenes()">
+        Encuentra
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="elapsed-time" *ngIf="elapsedTime > 0 && !noResults">
+      {{ resultCount }} resultados encontrados en: {{ elapsedTime }} segundos
+    </div>
+    <div class="container-img">
+      <div
+        class="card"
+        *ngFor="let imagen of resultados"
+        (click)="verDetalle(imagen.id)"
+      >
+        <a [routerLink]="['/imagen', imagen.id]">
+          <img
+            [src]="imagen.urls.small"
+            class="card-img-top image-hover-effect"
+            alt="{{ imagen.alt_description }}"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div *ngIf="noResults" class="no-results">
+      No hay resultados para mostrar.
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div *ngIf="showFooter">
+    <app-footer></app-footer>
+  </div>
+</footer>

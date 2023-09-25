@@ -1,0 +1,82 @@
+.container-detail {
+  max-width: 938px;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.h1-paginaDetalle {
+  font-size: 24px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #3b8281;
+}
+
+.container-card-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.container-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.detalles-logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-detalle {
+  width: 200px;
+  height: auto;
+}
+
+.logo-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-cabecera-img {
+  width: 400px;
+  height: auto;
+}
+
+.boton-atras-detalle {
+  background-color: #3b8281;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 1rem 0rem 1rem 0rem;
+  transform: scale(1.1);
+}
+
+.boton-atras-detalle:hover {
+  background-color: #f4ba51;
+  transform: scale(1.1);
+}
+
+.card-text {
+  color: #777;
+  margin: 5px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .boton-atras-detalle {
+    width: 20%;
+  }
+}
