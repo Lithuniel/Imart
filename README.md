@@ -54,6 +54,7 @@ El proyecto Imart ha sido desarrollado utilizando las siguientes tecnologías:
 
 Sigue estos pasos para ejecutar Imart en tu entorno local:
 
+"Recuerda que necesitas tener Node instalado para poder poner en funcionamiento el proyecto. Node.js v18.16.1"
 
 1. **Clona el Repositorio** :
 ```bash
