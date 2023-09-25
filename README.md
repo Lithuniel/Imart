@@ -95,4 +95,4 @@ Imart está desplegado y accesible en línea. Puedes visitar la plataforma en la
 
 - Jorge Cidre Fernández
 - https://www.linkedin.com/in/jorge-cidre-fern%C3%A1ndez/
-#  <p align="center">"Imart, el lienzo de la creatividad donde cada clic abre una ventana al infinito de posibilidades visuales"</p>
+
