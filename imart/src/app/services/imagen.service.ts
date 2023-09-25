@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../enviroments/environment';
+import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -23,9 +23,8 @@ export class ImagenService {
       }
       if (filters.color) {
         url += `&color=${filters.color}`;
-      }
-      
-   
+      } 
+
     }
   
     return this.http.get(url);
@@ -46,8 +45,4 @@ export class ImagenService {
     return this.http.get(url);
   }
 
-  getCities(): Observable<any> {
-    const url = `https://api.unsplash.com/search/photos?query=cities&per_page=10&client_id=${environment.apiKey}`;
-    return this.http.get(url);
-  }
 }

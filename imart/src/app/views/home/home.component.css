@@ -1,5 +1,5 @@
 .container {
-  max-width: 1000px;
+  max-width: 938px;
   padding: 30px;
   margin: 0 auto 30px;
   display: flex;
@@ -85,12 +85,13 @@
   font-weight: bold;
   padding: 5px 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   color: #f4ba51;
-  background-color: white;
   border-color: #f4ba51;
+  transform: scale(1.1);
 }
 
 .card {
@@ -125,27 +126,6 @@
 .elapsed-time {
   color: #3b8281;
   font-style: italic;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-.pagination button {
-  margin: 5px;
-  padding: 5px 10px;
-  background-color: #3b8281;
-  border: none;
-  border-radius: 12px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.pagination button:hover {
-  background-color: grey;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,6 +1,6 @@
 .footer {
   background-color: #6BB3AB;
-  color:white
+  color:white;
 }
 
 .small-logo {
@@ -59,6 +59,7 @@
   font-size: 14px;
   text-align: center;
   padding-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 .legal-links {
