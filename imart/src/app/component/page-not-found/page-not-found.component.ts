@@ -5,22 +5,23 @@ import { Component } from '@angular/core';
   template: `
     <div class="not-found-container">
       <a href="/">
-        <button>
-          Atrás
-        </button>
+        <button>Atrás</button>
       </a>
       <img
-      src="assets/images/error-404.svg"
-      alt="Error Image"
-      class="error-image"
+        src="assets/images/error-404.svg"
+        alt="Error Image"
+        class="error-image"
       />
       <p class="p-notFound">
-      La ruta que intentas seguir es más escurridiza que un unicornio en zapatillas de ballet. No podemos encontrarla. Por favor, verifica la dirección y asegúrate de que estás en el camino correcto. 
+        La ruta que intentas seguir es más escurridiza que un unicornio en
+        zapatillas de ballet. No podemos encontrarla. Por favor, verifica la
+        dirección y asegúrate de que estás en el camino correcto.
       </p>
     </div>
-    <app-footer></app-footer>
+    <app-footer [ngClass]="{ 'absolute-footer': esPaginaError }"></app-footer>
   `,
   styleUrls: ['./page-not-found.component.scss'],
 })
-
-export class PageNotFoundComponent {}
+export class PageNotFoundComponent {
+  esPaginaError: boolean = true;
+}
