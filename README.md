@@ -2,96 +2,99 @@
 <a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/66LQkC8N/Imart.png" alt="Imart"/></a>
 </h1>
 
-# <p align="center">EXPLORA EL UNIVERSO DE LA IMAGEN CON IMART</p>
+# <p align="center">EXPLORE THE IMAGE UNIVERSE WITH IMART</p>
 
-## 🧐 Descripción
+## 🧐 Description
 
-**Imart** es una plataforma que se conecta con la API de Unsplash para proporcionar una amplia gama de imágenes de alta calidad, listas para ser la fuente de inspiración en tus proyectos, aplicaciones o sitios web. Con una interfaz de usuario intuitiva y un potente motor de búsqueda, Imart facilita la búsqueda de imágenes de alta resolución de Unsplash.
+**Imart** is a platform that connects to the Unsplash API to provide a wide range of high-quality images ready to be a source of inspiration in your projects, applications, or websites. With an intuitive user interface and a powerful search engine, Imart makes it easy to find high-resolution images from Unsplash.
 
-- Página Principal
+- Home Page
 
-La página principal de Imart es el punto de partida para tu exploración visual. Aquí puedes realizar búsquedas de todo tipo de imágenes utilizando palabras clave. Nuestra potente función de búsqueda te ayudará a encontrar las imágenes perfectas para tus proyectos. Simplemente ingresa tus términos de búsqueda y descubre una amplia variedad de imágenes de alta calidad.
+Imart's home page is the starting point for your visual exploration. Here, you can search for all kinds of images using keywords. Our powerful search feature will help you find the perfect images for your projects. Simply enter your search terms and discover a wide variety of high-quality images.
 
-- Detalles de la Imagen
+- Image Details
 
-Cuando encuentres una imagen que te interese y desees obtener más información, puedes seleccionarla. Al hacerlo, serás redirigido a una página de detalle dedicada a esa imagen en particular. En esta página de detalle, encontrarás información sobre la imagen, como:
+When you find an image that interests you and want more information, you can select it. By doing so, you will be redirected to a dedicated detail page for that particular image. On this detail page, you will find information about the image, such as:
 
-- Autor: 
-- Fecha de Creación: 
-- Descripción detallada:
-- Ubicación: 
-- Ciudad: 
-- País: 
-- Marca de la Cámara: 
-- Modelo de cámara: 
-- Tiempo de Exposición: 
-- Valor de apertura:
-- Longitud focal: 
+- Author:
+- Creation Date:
+- Detailed Description:
+- Location:
+- City:
+- Country:
+- Camera Make:
+- Camera Model:
+- Exposure Time:
+- Aperture Value:
+- Focal Length:
 
-Esta información te ayudará a conocer más sobre la imagen y su contexto, lo que puede ser útil para tus proyectos creativos.
+This information will help you learn more about the image and its context, which can be useful for your creative projects.
 
-- Uso de la Plataforma
+- Platform Usage
 
-Imart te permite:
+Imart allows you to:
 
-- Buscar imágenes por palabras clave.
-- Filtrar imágenes por color.
-- Ver detalles de las imágenes, incluida la descripción y el autor.
+- Search for images by keywords.
+- Filter images by color.
+- View image details, including the description and author.
 
-¡Explora y utiliza Imart para mejorar tus proyectos creativos!
+Explore and use Imart to enhance your creative projects!
 
-## 💻 Tecnologías Utilizadas
+## 💻 Technologies Used
 
-El proyecto Imart ha sido desarrollado utilizando las siguientes tecnologías:
+The Imart project has been developed using the following technologies:
 
-- **Angular v16.2.6**: Framework utilizado para crear la interfaz de usuario dinámica y amigable.
-- **Node.js v18.16.1**: Node.js se utiliza principalmente para la gestión de dependencias y otras tareas, ya que el proyecto se enfoca exclusivamente en el Frontend.
-- **TypeScript**: Lenguaje utilizado para el desarrollo en el Frontend.
-- **CSS**: Estilos personalizados implementados utilizando CSS nativo.
-- **Unsplash API**: La API de Unsplash se utiliza para obtener imágenes de alta resolución.
+- **Angular v16.2.6**: Framework used to create a dynamic and user-friendly user interface.
+- **Node.js v18.16.1**: Node.js is mainly used for dependency management and other tasks, as the project focuses exclusively on the frontend.
+- **TypeScript**: Language used for frontend development.
+- **CSS**: Custom styles implemented using native CSS.
+- **Unsplash API**: The Unsplash API is used to obtain high-resolution images.
 
-## 📃 Cómo Iniciar el Proyecto en Local
+## 📃 How to Start the Project Locally
 
-Sigue estos pasos para ejecutar Imart en tu entorno local:
+Follow these steps to run Imart in your local environment:
 
-"Recuerda que necesitas tener Node instalado para poder poner en funcionamiento el proyecto. Node.js v18.16.1"
+"Remember that you need to have Node installed to get the project up and running. Node.js v18.16.1"
 
-1. **Clona el Repositorio** :
+1. **Clone the Repository** :
 ```bash
    git clone git@github.com:Lithuniel/Imart.git
 ```
 
-2. **Navega al Directorio del Proyecto** :
+2. **Navigate to the Project Directory** :
 ```bash
   cd imart
 ````
 
-3. **Instala las Dependencias** :
+3. **Install Dependencies** :
 ```bash
   npm install
 ```
 
-4. **Configura las variables de entorno** :
-Recomendamos que te registres en Unsplash y obtengas tu propia clave de API. Luego, abre el archivo src/environments/environment.ts y configura tu clave de API de Unsplash:
+4. **Set Environment Variables** :
+
+We recommend registering with Unsplash and obtaining your own API key. Then, open the src/environments/environment.ts file and set your Unsplash API key:
 ```bash
  export const environment = {
   production: false,
-  unsplashApiKey: 'TU_CLAVE_DE_API',
+  unsplashApiKey: 'YOUR_API_KEY',
 };
 ```
 
-5. **Inicia el Proyecto :**
+5. **Start the Project :**
 ```bash
   npm start
 ```
-El proyecto se ejecutará en el http://localhost:4200.
+The project will run at http://localhost:4200.
 
-## 👨‍💻 Deploy del proyecto
-Imart está desplegado y accesible en línea. Puedes visitar la plataforma en la siguiente dirección: https://imart.pages.dev/.
+## 👨‍💻 Project Deployment
+Imart is deployed and accessible online. You can visit the platform at the following address: https://imart.pages.dev/.
 
 
+I hope this helps! If you have any more questions or need further assistance, feel free to ask.
 
-## 🧍 Autores
+
+## 🧍 Autors
 
 - Jorge Cidre Fernández
 - https://www.linkedin.com/in/jorge-cidre-fern%C3%A1ndez/
