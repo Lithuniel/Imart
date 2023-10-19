@@ -36,7 +36,7 @@ export class ImagenService {
     return this.http.get(url, { params: params }).pipe(
       catchError(error => {
         console.error('Error en la solicitud HTTP:', error);
-        return throwError(error); // Maneja el error y devuelve un observable seguro
+        return throwError(error); 
       })
     );
   }
