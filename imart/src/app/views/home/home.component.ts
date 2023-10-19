@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, OnInit, HostListener } from '@angular/core';
 import { ImagenService } from '../../services/imagen.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -29,16 +30,20 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-  constructor(private imagenService: ImagenService, private router: Router, private searchService: SearchService) {}
+  constructor(private imagenService: ImagenService, private router: Router, private searchService: SearchService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.terminoBusqueda = this.searchService.getSearchTerm();
-
-    if (!this.terminoBusqueda || !this.searchService.getSearchTerm()) {
-      this.loadRandomImages(10);
-    } else {
-      this.loadImages();
-    }
+    this.route.queryParams.subscribe((queryParams) => {
+      if (queryParams['q']) {
+        this.terminoBusqueda = queryParams['q'];
+        this.buscarImagenes();
+      } else {
+        this.terminoBusqueda = '';
+        if (this.router.url === '/') {
+          this.loadRandomImages(10);
+        }
+      }
+    });
   }
   
   buscarImagenes() {
@@ -123,6 +128,15 @@ export class HomeComponent implements OnInit {
       );
   }
 
+  private updateUrlWithSearchTerm(searchTerm: string): void {
+    const queryParams = { q: searchTerm };
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams,
+      queryParamsHandling: 'merge', // Esto asegura que no se eliminen los otros parámetros de la URL
+    });
+  }
+  
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any): void {
     const scrollPosition = window.innerHeight + window.scrollY;
