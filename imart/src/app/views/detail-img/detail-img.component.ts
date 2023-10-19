@@ -5,7 +5,7 @@ import { ImagenService } from '../../services/imagen.service';
 @Component({
   selector: 'app-detail-img',
   templateUrl: './detail-img.component.html',
-  styleUrls: ['./detail-img.component.css']
+  styleUrls: ['./detail-img.component.scss']
 })
 export class DetailImgComponent implements OnInit {
   imagenId: string | null = null;

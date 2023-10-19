@@ -9,6 +9,7 @@ import { DetailImgComponent } from './views/detail-img/detail-img.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FilterComponent } from './component/filter/filter.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FooterComponent } from './component/footer/footer.component';
     DetailImgComponent,
     FilterComponent,
     FooterComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
