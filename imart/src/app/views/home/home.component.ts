@@ -133,7 +133,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams,
-      queryParamsHandling: 'merge', // Esto asegura que no se eliminen los otros parámetros de la URL
+      queryParamsHandling: 'merge', 
     });
   }
   
